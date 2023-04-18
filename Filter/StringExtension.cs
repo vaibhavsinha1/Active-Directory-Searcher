@@ -11,16 +11,6 @@ namespace ADDirectorySearcher
 {
     public static class StringExtensions
     {
-        public static int? ToNullableInt(this string s)
-        {
-            if (int.TryParse(s, out var i))
-            {
-                return i;
-            }
-
-            return null;
-        }
-
         public static string EscapeLdapSearchFilter(this string searchFilter)
         {
             var escape = new StringBuilder();
@@ -54,76 +44,6 @@ namespace ADDirectorySearcher
 
             return escape.ToString();
         }
-
-        public static string EscapeNameFilter(this string name)
-        {
-            var escape = new StringBuilder();
-            foreach (var current in name)
-            {
-                switch (current)
-                {
-                    case '\\':
-                    case ',':
-                    case ';':
-                    case '"':
-                    case '=':
-                    case '+':
-                    case '<':
-                    case '>':
-                    case '#':
-                        escape.Append(@"\");
-                        escape.Append(current);
-                        break;
-                    default:
-                        escape.Append(current);
-                        break;
-                }
-            }
-
-            return escape.ToString();
-        }
-
-        public static bool Contains(this string value, string toCheck, StringComparison comparison)
-        {
-            return value.IndexOf(toCheck, comparison) >= 0;
-        }
-
-        public static string GetOuPathFromDn(this string value)
-        {
-            const string ouSeparator = "OU=";
-            var startIndex = value.IndexOf(ouSeparator, StringComparison.OrdinalIgnoreCase);
-
-            if (startIndex < 0)
-            {
-                return null;
-            }
-
-            return value.Substring(startIndex);
-        }
-
-        public static string GetDomainFromDn(this string value)
-        {
-            const string dcSeparator = ",DC=";
-            return value.Split(new[] { dcSeparator }, StringSplitOptions.None)[1];
-        }
-
-        public static string ToBinarySid(this string value)
-        {
-            var sid = new SecurityIdentifier(value);
-            var bytes = new byte[sid.BinaryLength];
-            sid.GetBinaryForm(bytes, 0);
-
-            var hexBytes = Array.ConvertAll(bytes, b => b.ToString("X2", NumberFormatInfo.InvariantInfo));
-            return string.Concat(hexBytes);
-        }
-
-        public static string SafeSubstring(this string text, int start, int length) /* https://stackoverflow.com/questions/2021498/problem-with-substring-argumentoutofrangeexception */
-        {
-            return text == null || text.Length <= start || start < 0 || length < 0 ? string.Empty
-                : text.Length - start <= length ? text.Substring(start)
-                : text.Substring(start, length);
-        }
-
         public static Dictionary<string,string> GetStringAsDictionary(this string value){
 
             var itemDic = new Dictionary<string,string>();

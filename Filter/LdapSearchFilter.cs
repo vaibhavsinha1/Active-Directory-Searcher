@@ -9,9 +9,8 @@ namespace ADDirectorySearcher
 {
     public class LdapSearchFilter
     {
-        public string GetLdapSearchFilter(string objectClass = "user", string objectCategory = "person", string nameType = Attributes.SamAccountName, bool? isDeleted = null, Dictionary<string, string> searchProperties = null, bool andSearchCriteria = true)
+        public string GetLdapSearchFilter(string objectClass = "user", string objectCategory = "person", bool? isDeleted = null, Dictionary<string, string> searchProperties = null, bool andSearchCriteria = true)
         {
-            var safeNameType = nameType.EscapeLdapSearchFilter();
             var ldapSearchFilters = new List<string>();
             var batch = new StringBuilder();
 
@@ -53,24 +52,6 @@ namespace ADDirectorySearcher
 
             }
             return searchFilter;
-        }
-
-        private static string GetLookupName(string nameType, string name)
-        {
-            var isSamAccountName = nameType.Equals(Attributes.SamAccountName, StringComparison.OrdinalIgnoreCase);
-            if (!isSamAccountName)
-            {
-                return name;
-            }
-
-            var indexOf = name.IndexOf("\\", StringComparison.Ordinal);
-            if (indexOf != -1)
-            {
-                return name.Substring(indexOf + 1);
-            }
-
-            indexOf = name.IndexOf("@", StringComparison.Ordinal);
-            return indexOf > -1 ? name.Substring(0, indexOf) : name;
         }
     }
 }
