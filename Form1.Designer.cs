@@ -117,7 +117,7 @@
             txtSearchCriteria.Name = "txtSearchCriteria";
             txtSearchCriteria.Size = new Size(326, 144);
             txtSearchCriteria.TabIndex = 5;
-            txtSearchCriteria.Text = "extensionAttribute4,6123895;samAccountName,vaibhavsinha  ";
+            txtSearchCriteria.Text = "extensionAttribute4,111;samAccountName,vaibhavsinha  ";
             // 
             // label4
             // 
