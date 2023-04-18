@@ -1,17 +1,19 @@
 # Active Directory Search 
 Some of the features :
 
-1) Enter Object Class and Category
+- Enter Object Class and Category
 
-2) Enter search filter criteria with OR and And conditions (OR enter your ldap filter) 
+- Enter Domain and OU
 
-3) Paging the search result with size limit 
+- Enter search filter criteria with OR and And conditions (OR enter your ldap filter) 
 
-4) Sorting and Sort Direction 
+- Paging the search result with size limit 
 
-5) Selection for Properties to Load, or enter what ever we want to load
+- Sorting and Sort Direction 
 
-6) See the result in screen or save in file as CSV 
+- Selection for Properties to Load, or enter what ever we want to load
+
+- See the result in screen or save in file as CSV 
 
 ![Sample Image](SampleImage.png)
 
