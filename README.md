@@ -15,6 +15,5 @@ Some of the features :
 
 - See the result in screen or save in file as CSV 
 
-![Sample Image](SampleImage.png)
-
+![Sample Image Form](SampleImageForm.png)
  
