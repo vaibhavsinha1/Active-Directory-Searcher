@@ -17,6 +17,9 @@ namespace ADSearchWinForm
             var ou = txtOU.Text;
             var userSearchCriteria = txtSearchCriteria.Text;
             var pageSize = txtPageSize.Text;
+            var includeDeleted = chkBoxIncludeDeleted.Checked;
+            var userName = txtUserName.Text;
+            var password = txtPassword.Text;
             if (string.IsNullOrEmpty(pageSize))
             {
                 pageSize = "0";
@@ -34,11 +37,11 @@ namespace ADSearchWinForm
             }
 
             var otherProperties = txtOtherProperties.Text;
-            if(!string.IsNullOrEmpty(otherProperties))
+            if (!string.IsNullOrEmpty(otherProperties))
             {
                 propertiesToLoadList.AddRange(otherProperties.ToLower().Split(','));
             }
-            if(propertiesToLoadList.Count == 0)
+            if (propertiesToLoadList.Count == 0)
             {
                 propertiesToLoadList.Add("samAccountName");
             }
@@ -46,9 +49,10 @@ namespace ADSearchWinForm
             var sortDirection = rbAsc.Checked ? "ASC" : "DESC";
             var searchPropeties = userSearchCriteria.GetStringAsDictionary();
             var ldapSearchFilter = new LdapSearchFilter();
-            var filter = ldapSearchFilter.GetLdapSearchFilter(objectClass: objectClass, objectCategory: objectCategory, searchProperties: searchPropeties, andSearchCriteria: searchCriteriaAnd);
+            var filter = ldapSearchFilter.GetLdapSearchFilter(objectClass: objectClass, objectCategory: objectCategory, isDeleted: includeDeleted, searchProperties: searchPropeties, andSearchCriteria: searchCriteriaAnd);
             var adSearchResult = new ADSearchResult();
-            var searchRsult = adSearchResult.GetSearchResults(filter: filter, domain: domain, ou: ou, propertiesToLoad: propertiesToLoadList.ToArray(), pageSize: int.Parse(pageSize), sizeLimit: int.Parse(sizeLimit), sortProperty: sortProperty, sortDirection: sortDirection);
+            var searchRsult = adSearchResult.GetSearchResults(filter: filter, domain: domain, ou: ou, propertiesToLoad: propertiesToLoadList.ToArray(), pageSize: int.Parse(pageSize), sizeLimit: int.Parse(sizeLimit),
+                                sortProperty: sortProperty, sortDirection: sortDirection, userName: userName, password: password, includeDeleted: includeDeleted);
 
             lstSearchResult.DataSource = searchRsult;
             if (chkSaveFile.Checked)
@@ -84,6 +88,11 @@ namespace ADSearchWinForm
             {
                 chkPropertiesToLoad.Items.Add(item, true);
             }
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

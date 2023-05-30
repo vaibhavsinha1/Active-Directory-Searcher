@@ -64,14 +64,18 @@
             label15 = new Label();
             txtOtherProperties = new TextBox();
             label16 = new Label();
+            chkBoxIncludeDeleted = new CheckBox();
+            txtPassword = new TextBox();
+            label17 = new Label();
+            txtUserName = new TextBox();
+            label18 = new Label();
             grpBoxSearch.SuspendLayout();
             groupBox1.SuspendLayout();
-            SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(36, 91);
+            label1.Location = new Point(26, 199);
             label1.Name = "label1";
             label1.Size = new Size(75, 25);
             label1.TabIndex = 0;
@@ -79,7 +83,7 @@
             // 
             // txtDomain
             // 
-            txtDomain.Location = new Point(178, 88);
+            txtDomain.Location = new Point(168, 196);
             txtDomain.Name = "txtDomain";
             txtDomain.Size = new Size(238, 31);
             txtDomain.TabIndex = 1;
@@ -87,7 +91,7 @@
             // 
             // txtOU
             // 
-            txtOU.Location = new Point(555, 91);
+            txtOU.Location = new Point(545, 199);
             txtOU.Name = "txtOU";
             txtOU.Size = new Size(637, 31);
             txtOU.TabIndex = 3;
@@ -96,7 +100,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(446, 91);
+            label2.Location = new Point(436, 199);
             label2.Name = "label2";
             label2.Size = new Size(38, 25);
             label2.TabIndex = 2;
@@ -105,7 +109,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(31, 160);
+            label3.Location = new Point(21, 268);
             label3.Name = "label3";
             label3.Size = new Size(124, 25);
             label3.TabIndex = 4;
@@ -113,7 +117,7 @@
             // 
             // txtSearchCriteria
             // 
-            txtSearchCriteria.Location = new Point(178, 157);
+            txtSearchCriteria.Location = new Point(168, 265);
             txtSearchCriteria.Name = "txtSearchCriteria";
             txtSearchCriteria.Size = new Size(326, 144);
             txtSearchCriteria.TabIndex = 5;
@@ -121,7 +125,7 @@
             // 
             // label4
             // 
-            label4.Location = new Point(545, 164);
+            label4.Location = new Point(535, 272);
             label4.Name = "label4";
             label4.Size = new Size(527, 124);
             label4.TabIndex = 6;
@@ -129,7 +133,7 @@
             // 
             // txtPageSize
             // 
-            txtPageSize.Location = new Point(145, 506);
+            txtPageSize.Location = new Point(135, 614);
             txtPageSize.Name = "txtPageSize";
             txtPageSize.Size = new Size(238, 31);
             txtPageSize.TabIndex = 8;
@@ -138,7 +142,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(11, 508);
+            label5.Location = new Point(1, 616);
             label5.Name = "label5";
             label5.Size = new Size(81, 25);
             label5.TabIndex = 7;
@@ -147,7 +151,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(14, 588);
+            label6.Location = new Point(4, 696);
             label6.Name = "label6";
             label6.Size = new Size(159, 25);
             label6.TabIndex = 10;
@@ -157,14 +161,14 @@
             // chkPropertiesToLoad
             // 
             chkPropertiesToLoad.FormattingEnabled = true;
-            chkPropertiesToLoad.Location = new Point(190, 588);
+            chkPropertiesToLoad.Location = new Point(180, 696);
             chkPropertiesToLoad.Name = "chkPropertiesToLoad";
             chkPropertiesToLoad.Size = new Size(263, 256);
             chkPropertiesToLoad.TabIndex = 11;
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(835, 917);
+            btnSearch.Location = new Point(47, 1117);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(356, 34);
             btnSearch.TabIndex = 13;
@@ -175,7 +179,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(47, 974);
+            label7.Location = new Point(1243, 46);
             label7.Name = "label7";
             label7.Size = new Size(59, 25);
             label7.TabIndex = 14;
@@ -184,7 +188,7 @@
             // chkSaveFile
             // 
             chkSaveFile.AutoSize = true;
-            chkSaveFile.Location = new Point(844, 957);
+            chkSaveFile.Location = new Point(47, 1168);
             chkSaveFile.Name = "chkSaveFile";
             chkSaveFile.Size = new Size(493, 29);
             chkSaveFile.TabIndex = 15;
@@ -193,7 +197,7 @@
             // 
             // txtLDAPFilter
             // 
-            txtLDAPFilter.Location = new Point(178, 334);
+            txtLDAPFilter.Location = new Point(168, 442);
             txtLDAPFilter.Name = "txtLDAPFilter";
             txtLDAPFilter.Size = new Size(326, 144);
             txtLDAPFilter.TabIndex = 17;
@@ -203,7 +207,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(31, 337);
+            label8.Location = new Point(21, 445);
             label8.Name = "label8";
             label8.Size = new Size(98, 25);
             label8.TabIndex = 16;
@@ -212,7 +216,7 @@
             // 
             // txtObjClass
             // 
-            txtObjClass.Location = new Point(178, 12);
+            txtObjClass.Location = new Point(168, 120);
             txtObjClass.Name = "txtObjClass";
             txtObjClass.Size = new Size(238, 31);
             txtObjClass.TabIndex = 19;
@@ -221,7 +225,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(36, 15);
+            label9.Location = new Point(26, 123);
             label9.Name = "label9";
             label9.Size = new Size(104, 25);
             label9.TabIndex = 18;
@@ -229,7 +233,7 @@
             // 
             // txtObjCategory
             // 
-            txtObjCategory.Location = new Point(588, 9);
+            txtObjCategory.Location = new Point(578, 117);
             txtObjCategory.Name = "txtObjCategory";
             txtObjCategory.Size = new Size(238, 31);
             txtObjCategory.TabIndex = 21;
@@ -238,7 +242,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(446, 12);
+            label10.Location = new Point(436, 120);
             label10.Name = "label10";
             label10.Size = new Size(136, 25);
             label10.TabIndex = 20;
@@ -259,7 +263,7 @@
             // rbOrSearch
             // 
             rbOrSearch.AutoSize = true;
-            rbOrSearch.Location = new Point(247, 59);
+            rbOrSearch.Location = new Point(143, 56);
             rbOrSearch.Name = "rbOrSearch";
             rbOrSearch.Size = new Size(62, 29);
             rbOrSearch.TabIndex = 23;
@@ -270,16 +274,16 @@
             // 
             grpBoxSearch.Controls.Add(rbAndSearch);
             grpBoxSearch.Controls.Add(rbOrSearch);
-            grpBoxSearch.Location = new Point(555, 278);
+            grpBoxSearch.Location = new Point(545, 386);
             grpBoxSearch.Name = "grpBoxSearch";
-            grpBoxSearch.Size = new Size(389, 104);
+            grpBoxSearch.Size = new Size(237, 104);
             grpBoxSearch.TabIndex = 24;
             grpBoxSearch.TabStop = false;
             grpBoxSearch.Text = "SearchCriteria";
             // 
             // txtSizeLimit
             // 
-            txtSizeLimit.Location = new Point(626, 510);
+            txtSizeLimit.Location = new Point(616, 618);
             txtSizeLimit.Name = "txtSizeLimit";
             txtSizeLimit.Size = new Size(238, 31);
             txtSizeLimit.TabIndex = 26;
@@ -288,7 +292,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(480, 512);
+            label11.Location = new Point(470, 620);
             label11.Name = "label11";
             label11.Size = new Size(81, 25);
             label11.TabIndex = 25;
@@ -296,7 +300,7 @@
             // 
             // label12
             // 
-            label12.Location = new Point(614, 544);
+            label12.Location = new Point(604, 652);
             label12.Name = "label12";
             label12.Size = new Size(527, 54);
             label12.TabIndex = 27;
@@ -306,7 +310,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(480, 600);
+            label13.Location = new Point(470, 708);
             label13.Name = "label13";
             label13.Size = new Size(147, 25);
             label13.TabIndex = 28;
@@ -316,7 +320,7 @@
             // 
             // txtSortProperty
             // 
-            txtSortProperty.Location = new Point(626, 597);
+            txtSortProperty.Location = new Point(616, 705);
             txtSortProperty.Name = "txtSortProperty";
             txtSortProperty.Size = new Size(238, 31);
             txtSortProperty.TabIndex = 29;
@@ -324,7 +328,7 @@
             // 
             // label14
             // 
-            label14.Location = new Point(614, 635);
+            label14.Location = new Point(604, 743);
             label14.Name = "label14";
             label14.Size = new Size(527, 54);
             label14.TabIndex = 30;
@@ -334,7 +338,7 @@
             // 
             groupBox1.Controls.Add(rbAsc);
             groupBox1.Controls.Add(radioButton2);
-            groupBox1.Location = new Point(480, 678);
+            groupBox1.Location = new Point(470, 786);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(389, 104);
             groupBox1.TabIndex = 31;
@@ -368,16 +372,16 @@
             lstSearchResult.FormattingEnabled = true;
             lstSearchResult.HorizontalScrollbar = true;
             lstSearchResult.ItemHeight = 25;
-            lstSearchResult.Location = new Point(47, 1022);
+            lstSearchResult.Location = new Point(1243, 88);
             lstSearchResult.Name = "lstSearchResult";
             lstSearchResult.ScrollAlwaysVisible = true;
-            lstSearchResult.Size = new Size(1290, 179);
+            lstSearchResult.Size = new Size(1071, 804);
             lstSearchResult.TabIndex = 33;
             // 
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(14, 884);
+            label15.Location = new Point(4, 992);
             label15.Name = "label15";
             label15.Size = new Size(142, 25);
             label15.TabIndex = 34;
@@ -385,7 +389,7 @@
             // 
             // txtOtherProperties
             // 
-            txtOtherProperties.Location = new Point(170, 881);
+            txtOtherProperties.Location = new Point(160, 989);
             txtOtherProperties.Name = "txtOtherProperties";
             txtOtherProperties.Size = new Size(637, 31);
             txtOtherProperties.TabIndex = 35;
@@ -393,17 +397,66 @@
             // 
             // label16
             // 
-            label16.Location = new Point(170, 917);
+            label16.Location = new Point(160, 1025);
             label16.Name = "label16";
             label16.Size = new Size(527, 38);
             label16.TabIndex = 36;
             label16.Text = "Enter comma seperated other properties to load";
             // 
+            // chkBoxIncludeDeleted
+            // 
+            chkBoxIncludeDeleted.AutoSize = true;
+            chkBoxIncludeDeleted.Location = new Point(845, 425);
+            chkBoxIncludeDeleted.Name = "chkBoxIncludeDeleted";
+            chkBoxIncludeDeleted.Size = new Size(161, 29);
+            chkBoxIncludeDeleted.TabIndex = 37;
+            chkBoxIncludeDeleted.Text = "Include Deleted";
+            chkBoxIncludeDeleted.UseVisualStyleBackColor = true;
+            chkBoxIncludeDeleted.Visible = false;
+            // 
+            // txtPassword
+            // 
+            txtPassword.Location = new Point(578, 52);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(238, 31);
+            txtPassword.TabIndex = 41;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(436, 55);
+            label17.Name = "label17";
+            label17.Size = new Size(87, 25);
+            label17.TabIndex = 40;
+            label17.Text = "Password";
+            // 
+            // txtUserName
+            // 
+            txtUserName.Location = new Point(168, 55);
+            txtUserName.Name = "txtUserName";
+            txtUserName.Size = new Size(238, 31);
+            txtUserName.TabIndex = 39;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(26, 58);
+            label18.Name = "label18";
+            label18.Size = new Size(94, 25);
+            label18.TabIndex = 38;
+            label18.Text = "UserName";
+            label18.Click += label18_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1349, 1221);
+            ClientSize = new Size(2326, 1221);
+            Controls.Add(txtPassword);
+            Controls.Add(label17);
+            Controls.Add(txtUserName);
+            Controls.Add(label18);
+            Controls.Add(chkBoxIncludeDeleted);
             Controls.Add(label16);
             Controls.Add(txtOtherProperties);
             Controls.Add(label15);
@@ -485,5 +538,10 @@
         private Label label15;
         private TextBox txtOtherProperties;
         private Label label16;
+        private CheckBox chkBoxIncludeDeleted;
+        private TextBox txtPassword;
+        private Label label17;
+        private TextBox txtUserName;
+        private Label label18;
     }
 }

@@ -14,10 +14,10 @@ namespace ADDirectorySearcher
             var ldapSearchFilters = new List<string>();
             var batch = new StringBuilder();
 
-            string booleanFilter = string.Empty;
+            string booleanFilter;
             string filter = string.Empty;
-            string ldapSearchFilter = string.Empty;
-            string searchFilter = string.Empty;
+            string ldapSearchFilter;;
+            string searchFilter;
             objectClass = string.IsNullOrWhiteSpace(objectClass) ? null : objectClass;
             objectCategory = string.IsNullOrWhiteSpace(objectCategory) ? null : objectCategory;
             if (objectClass != null || objectCategory != null)
@@ -25,6 +25,7 @@ namespace ADDirectorySearcher
                 filter = objectClass != null ? $"(objectClass={objectClass})" : string.Empty;
                 filter = objectCategory != null && isDeleted != true ? $"{filter}(objectCategory={objectCategory})" : filter;
             }
+
             if (searchProperties?.Count > 0)
             {
                 string safeSearchProperty = string.Empty;
@@ -48,8 +49,6 @@ namespace ADDirectorySearcher
             else
             {
                 searchFilter = filter != null ? $"(&{filter})" : "";
-
-
             }
             return searchFilter;
         }
